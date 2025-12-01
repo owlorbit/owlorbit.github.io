@@ -102,11 +102,3 @@ For support, questions, or feedback, please contact:
 **timnuwin@gmail.com**
 
 ---
-
-<div align="center">
-
-**Made with ❤️**
-
-🚧 *In Development*
-
-</div>
