@@ -1,104 +1,345 @@
-<div align="center">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argly - App Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-# <span style="color: #6366f1;">Argly</span>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --dark-secondary: #1e293b;
+            --light: #f8fafc;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
 
-### <span style="color: #8b5cf6;">Remote Desktop Control</span>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
 
-*A lightning-fast remote desktop application that lets you control your macOS desktop from your iOS device over your local network.*
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
-[![iOS](https://img.shields.io/badge/iOS-15.0+-blue.svg)](https://www.apple.com/ios/)
-[![macOS](https://img.shields.io/badge/macOS-12.3+-blue.svg)](https://www.apple.com/macos/)
+        header {
+            text-align: center;
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
 
-</div>
+        .logo {
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+        }
 
----
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
 
-## <span style="color: #6366f1;">✨ Features</span>
+        .card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 12px; margin: 20px 0;">
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(99, 102, 241, 0.4);
+            border-color: rgba(99, 102, 241, 0.4);
+        }
 
-### 🖥️ **Real-Time Screen Sharing**
-- Ultra-low latency screen mirroring from macOS to iOS
-- Adaptive quality streaming based on network conditions
-- HD mode support for crisp visuals
+        .card h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
 
-### 🖱️ **Full Desktop Control**
-- Precise mouse and trackpad control
-- Click, drag, and scroll support
-- Window dragging capabilities
-- Pinch-to-zoom and pan gestures
+        .card h3 {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+        }
 
-### ⌨️ **Smart Keyboard**
-- Full keyboard input with all key codes
-- Custom keyboard overlay optimized for remote control
-- Quick shortcuts (Cmd+C, Cmd+V, Return, Tab, Esc, Delete)
-- Haptic feedback for all actions
-- Favorite shortcuts panel
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
 
-### 🔓 **Lock Screen Unlock**
-- Unlock your Mac directly from your iPhone
-- Secure password entry
-- Works even when your Mac is locked
+        .feature-item {
+            background: rgba(99, 102, 241, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
 
-### 🔍 **Zero Configuration**
-- Automatic device discovery
-- No IP addresses or ports to configure
-- Your Mac appears automatically in the iOS app
-- Optional password protection
+        .feature-item:hover {
+            background: rgba(99, 102, 241, 0.2);
+            transform: translateX(5px);
+        }
 
-### 🔒 **Privacy First**
-- 100% local network - no internet required
-- All data stays on your network
-- Your screen, passwords, and files stay private
+        .feature-item strong {
+            color: var(--secondary);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
 
-</div>
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
 
----
+        ul li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
 
-## <span style="color: #6366f1;">📋 Requirements</span>
+        ul li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
 
-- **iOS 15.0+** - iPhone or iPad
-- **macOS 12.3+** - Mac computer
-- Both devices on the same Wi-Fi network
-- Permissions: The macOS app will request accessibility and screen recording permissions (required for remote control)
+        .contact-section {
+            text-align: center;
+            padding: 3rem 0;
+        }
 
----
+        .contact-link {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
 
-## <span style="color: #8b5cf6;">🚀 Getting Started</span>
+        .contact-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
+        }
 
-### **macOS Server Setup**
-1. Launch Argly Server on your Mac
-2. Click "Start Server"
-3. Grant accessibility and screen recording permissions when prompted
-4. Your Mac will automatically appear in the iOS app
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(99, 102, 241, 0.2);
+            border: 1px solid var(--primary);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 0.25rem;
+        }
 
-### **iOS Client Setup**
-1. Open Argly on your iPhone/iPad
-2. Ensure both devices are on the same Wi-Fi network
-3. Your Mac will appear automatically
-4. Tap to connect and start controlling!
+        .requirements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
 
----
+        .requirement-box {
+            background: rgba(139, 92, 246, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-top: 3px solid var(--secondary);
+        }
 
-## <span style="color: #6366f1;">💡 Use Cases</span>
+        .requirement-box h4 {
+            color: var(--secondary);
+            margin-bottom: 0.75rem;
+        }
 
-- 🛋️ **Work from anywhere** - Control your Mac from your couch or bed
-- 📱 **Mobile presentations** - Present from your iPhone
-- 🔓 **Remote unlock** - Unlock your Mac when away from your desk
-- 📁 **Quick file access** - Access files and apps remotely
-- 🎮 **Gaming & Media** - Control media playback from your phone
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
+            margin-top: 4rem;
+        }
 
----
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
 
-## <span style="color: #8b5cf6;">🔐 Privacy & Security</span>
+            .card {
+                padding: 1.5rem;
+            }
 
-Argly operates entirely on your local network. All communication is direct between your devices. Optional password protection adds an extra layer of security.
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
----
+        .icon {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Argly</div>
+            <div class="tagline">Remote Desktop Control</div>
+        </header>
 
-## <span style="color: #6366f1;">📞 Support</span>
+        <div class="card">
+            <h2><span class="icon">✨</span> About Argly</h2>
+            <p>
+                Argly is a lightning-fast remote desktop application that allows you to control your macOS desktop 
+                from your iOS device over your local network. Experience desktop-class performance with ultra-low 
+                latency streaming—no internet connection required.
+            </p>
+            <p style="margin-top: 1rem; color: var(--text-muted);">
+                Optimized for local network performance, Argly provides a seamless, 
+                private, and secure way to access and control your Mac from anywhere in your home.
+            </p>
+        </div>
 
-For support, questions, or feedback, please contact:
-**timnuwin@gmail.com**
+        <div class="card">
+            <h2><span class="icon">🚀</span> Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <strong>🖥️ Real-Time Screen Sharing</strong>
+                    Ultra-low latency screen mirroring with adaptive quality streaming and HD mode support.
+                </div>
+                <div class="feature-item">
+                    <strong>🖱️ Full Desktop Control</strong>
+                    Precise mouse, trackpad, and keyboard control with window dragging capabilities.
+                </div>
+                <div class="feature-item">
+                    <strong>⌨️ Smart Keyboard</strong>
+                    Custom keyboard overlay with quick shortcuts and haptic feedback.
+                </div>
+                <div class="feature-item">
+                    <strong>🔓 Lock Screen Unlock</strong>
+                    Unlock your Mac directly from your iPhone, even when it's locked.
+                </div>
+                <div class="feature-item">
+                    <strong>🔍 Zero Configuration</strong>
+                    Automatic device discovery—no setup required.
+                </div>
+                <div class="feature-item">
+                    <strong>🔒 Privacy First</strong>
+                    100% local network—all data stays on your network.
+                </div>
+            </div>
+        </div>
 
----
+        <div class="card">
+            <h2><span class="icon">📋</span> Requirements</h2>
+            <div class="requirements">
+                <div class="requirement-box">
+                    <h4>iOS Client</h4>
+                    <p>iOS 15.0 or later</p>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">iPhone or iPad</p>
+                </div>
+                <div class="requirement-box">
+                    <h4>macOS Server</h4>
+                    <p>macOS 12.3 or later</p>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">Accessibility & Screen Recording permissions</p>
+                </div>
+                <div class="requirement-box">
+                    <h4>Network</h4>
+                    <p>Same Wi-Fi network</p>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">Local network connection required</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🛠️</span> Getting Started</h2>
+            <h3>macOS Server Setup</h3>
+            <ul>
+                <li>Launch Argly Server on your Mac</li>
+                <li>Click "Start Server"</li>
+                <li>Grant accessibility and screen recording permissions when prompted</li>
+                <li>Your Mac will automatically appear in the iOS app</li>
+            </ul>
+
+            <h3>iOS Client Setup</h3>
+            <ul>
+                <li>Open Argly on your iPhone or iPad</li>
+                <li>Ensure both devices are on the same Wi-Fi network</li>
+                <li>Your Mac will appear automatically in the device list</li>
+                <li>Tap to connect and start controlling your Mac!</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💡</span> Use Cases</h2>
+            <ul>
+                <li><strong>Work from anywhere</strong> - Control your Mac from your couch or bed</li>
+                <li><strong>Mobile presentations</strong> - Present from your iPhone</li>
+                <li><strong>Remote unlock</strong> - Unlock your Mac when away from your desk</li>
+                <li><strong>Quick file access</strong> - Access files and apps remotely</li>
+                <li><strong>Media control</strong> - Control media playback from your phone</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🔐</span> Privacy & Security</h2>
+            <p>
+                Argly operates entirely on your local network. 
+                All communication is direct between your devices. Optional password protection adds 
+                an extra layer of security.
+            </p>
+            <div style="margin-top: 1.5rem;">
+                <span class="badge">100% Local Network</span>
+                <span class="badge">End-to-End Private</span>
+                <span class="badge">Optional Password Protection</span>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2 style="color: var(--primary); margin-bottom: 1.5rem;">Need Help?</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                For support, questions, or feedback, please contact:
+            </p>
+            <a href="mailto:timnuwin@gmail.com" class="contact-link">timnuwin@gmail.com</a>
+        </div>
+    </div>
+</body>
+</html>
+
