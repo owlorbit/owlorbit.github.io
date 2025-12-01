@@ -21,7 +21,6 @@
 - Ultra-low latency screen mirroring from macOS to iOS
 - Adaptive quality streaming based on network conditions
 - HD mode support for crisp visuals
-- Smooth 30 FPS performance
 
 ### 🖱️ **Full Desktop Control**
 - Precise mouse and trackpad control
@@ -42,7 +41,7 @@
 - Works even when your Mac is locked
 
 ### 🔍 **Zero Configuration**
-- Automatic device discovery via Bonjour
+- Automatic device discovery
 - No IP addresses or ports to configure
 - Your Mac appears automatically in the iOS app
 - Optional password protection
@@ -50,7 +49,6 @@
 ### 🔒 **Privacy First**
 - 100% local network - no internet required
 - All data stays on your network
-- Never touches external servers
 - Your screen, passwords, and files stay private
 
 </div>
@@ -94,14 +92,14 @@
 
 ## <span style="color: #8b5cf6;">🔐 Privacy & Security</span>
 
-Argly operates entirely on your local network. No data is sent to external servers. All communication is direct between your devices. Optional password protection adds an extra layer of security.
+Argly operates entirely on your local network. All communication is direct between your devices. Optional password protection adds an extra layer of security.
 
 ---
 
 ## <span style="color: #6366f1;">📞 Support</span>
 
-For support, questions, or feedback, please visit:
-**https://timnuwin.com**
+For support, questions, or feedback, please contact:
+**timnuwin@gmail.com**
 
 ---
 
