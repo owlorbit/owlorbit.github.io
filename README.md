@@ -24,11 +24,10 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            background: #0f172a;
             color: var(--text);
             line-height: 1.6;
             min-height: 100vh;
-            background-attachment: fixed;
         }
 
         .container {
@@ -46,10 +45,7 @@
         .logo {
             font-size: 4rem;
             font-weight: 700;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary);
             margin-bottom: 1rem;
             letter-spacing: -2px;
         }
@@ -61,20 +57,12 @@
         }
 
         .card {
-            background: rgba(30, 41, 59, 0.6);
-            backdrop-filter: blur(10px);
+            background: rgba(30, 41, 59, 0.8);
             border-radius: 20px;
             padding: 2.5rem;
             margin-bottom: 2rem;
             border: 1px solid rgba(99, 102, 241, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 70px rgba(99, 102, 241, 0.4);
-            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .card h2 {
@@ -104,12 +92,6 @@
             padding: 1.5rem;
             border-radius: 12px;
             border-left: 4px solid var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .feature-item:hover {
-            background: rgba(99, 102, 241, 0.2);
-            transform: translateX(5px);
         }
 
         .feature-item strong {
@@ -146,19 +128,13 @@
         .contact-link {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: var(--primary);
             color: white;
             text-decoration: none;
             border-radius: 50px;
             font-size: 1.1rem;
             font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
-        }
-
-        .contact-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
         }
 
         .badge {
@@ -339,6 +315,11 @@
             </p>
             <a href="mailto:timnuwin@gmail.com" class="contact-link">timnuwin@gmail.com</a>
         </div>
+
+        <footer>
+            <p>Made with ❤️</p>
+            <p style="margin-top: 0.5rem; color: var(--text-muted);">© 2025 Argly. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
